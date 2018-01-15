@@ -1,0 +1,37 @@
+project Name = exchanges
+project start Date = 12/01/2018
+project reference = bitWireExchange Backend
+project Lead = shubham gupta (V.P)
+project developers = utkarsh vashishtha(Mean developer) , rizvaan chaudhary(senior node developer)
+project status  = ongoing(development)
+project backend = nodejs
+project framework = express
+project database = mongodb 
+project database designed by (utkarsh, rizvaan, shubham gupta)
+project stages  = development, stagging,  production
+project server = private (not yet)
+
+
+Want to Know about project ??
+steps :
+1)
+.env file on root having a variable "NODE_ENV" which decide on which mode project will run.
+dev = development
+stag = stagging 
+prod = production
+
+2)
+in config -> env folder
+having index.js which run first and maintain all below things :-
+->Rules for database connections
+->Rules for server and port
+->Rules for redis and redis configuration
+->Rules for required modules of express
+
+3)
+jwt handler having all the rules for Authentication
+and every rule apply on it is in the redisClient folder, basically it is saved in redis so that we can auth easily and fast.
+
+4)
+all the exception rules are in customeException and defination for using constants in exception 
+are in the constants.js on root of lib

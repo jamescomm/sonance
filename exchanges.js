@@ -3,16 +3,19 @@ console.log("//************************* Welcome to exchanges ******************
 console.log("");
 
 
+    //import env 
+    require('dotenv').config()
+    
+    //Import Config
+    const config = require('./lib/config');
+    
 
-//Import Config
-const config = require('./lib/config');
-require('dotenv').config()
-console.log("env ",process.env.NODE_ENV)
-config.dbConfig(config.cfg, (err) => {
-    if (err) {
-        console.log(err, 'exiting the app.');
-        return;
-    }
+    //connect to db
+    config.dbConfig(config.cfg, (err) => {
+        if (err) {
+            console.log(err, 'exiting the app.');
+            return;
+        }
 
     // load external modules
     const express = require("express");
