@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.0",
     "bitcoin": "^3.0.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
