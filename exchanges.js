@@ -13,7 +13,7 @@ console.log("");
     // connect to db
 config.dbConfig(config.cfg, (err) => {
     if (err) {
-        logger.error(err, 'exiting the app.');
+        console.log(err, 'exiting the app.');
         return;
     }
 
