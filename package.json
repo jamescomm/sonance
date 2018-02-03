@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.0",
+    "bignumber.js": "^6.0.0",
     "bitcoin": "^3.0.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
@@ -19,6 +20,7 @@
     "lodash": "^4.17.4",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.9",
+    "node-cache": "^4.1.1",
     "nodemon": "^1.14.11",
     "redis": "^2.8.0",
     "socket.io": "^2.0.4"
