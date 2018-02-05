@@ -20,6 +20,7 @@
     "lodash": "^4.17.4",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.9",
+    "mongoose-double": "0.0.1",
     "mongoose-paginate": "^5.0.3",
     "node-cache": "^4.1.1",
     "nodemon": "^1.14.11",
