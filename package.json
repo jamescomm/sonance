@@ -28,8 +28,13 @@
     "node-cache": "^4.1.1",
     "nodemailer": "^4.4.2",
     "nodemon": "^1.14.11",
+    "paypal-rest-sdk": "^1.7.1",
     "redis": "^2.8.0",
+    "ripple-lib": "^0.18.2",
     "socket.io": "^2.0.4",
-    "twilio": "^3.11.2"
+    "twilio": "^3.11.2",
+    "web3": "^1.0.0-beta.30",
+    "web3-eth-accounts": "^1.0.0-beta.30",
+    "web3-eth-personal": "^1.0.0-beta.30"
   }
 }
