@@ -1,13 +1,12 @@
 project Name = exchanges
-project start Date = 12/01/2018
+project start Date = 05/02/2018
 project reference = bitWireExchange Backend
 project Lead = shubham gupta (V.P)
-project developers = utkarsh vashishtha(Mean developer) , rizvaan chaudhary(senior node developer)
-project status  = ongoing(development)
+project developers = utkarsh vashishtha(Mean developer)
 project backend = nodejs
 project framework = express
 project database = mongodb 
-project database designed by (utkarsh, rizvaan, shubham gupta)
+project database designed by (utkarsh, kanchan, manish, shubham gupta)
 project stages  = development, stagging,  production
 project server = private (not yet)
 
