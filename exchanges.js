@@ -23,7 +23,16 @@ config.dbConfig(config.cfg, (err) => {
 
     // init express app
     const app = express();
+    var server = require('http').Server(app);
+    var io = require('socket.io')(server);
+    const dashboardServices = require("./lib/socket/dashboard");
 
+    io.sockets.on('connection', function(socket){
+        console.log("1 socket")
+        socket.on('updateData', function(){
+        io.sockets.emit('orderTrade');
+        });
+    })
     // set server home directory
     app.locals.rootDir = __dirname;
 
@@ -35,7 +44,7 @@ config.dbConfig(config.cfg, (err) => {
     //require("./lib/post")(app);
 
     // start server
-    app.listen(config.cfg.port, () => {
+    server.listen(config.cfg.port, () => {
         console.log(`Express server listening on ${config.cfg.port}, in ${config.cfg.TAG} mode`);
     });
 
