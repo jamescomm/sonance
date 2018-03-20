@@ -17,17 +17,37 @@ config.dbConfig(config.cfg, (err) => {
         return;
     }
 
+ // set server home directory
+//    app.locals.rootDir = __dirname;
+
+    // config express
+  //  config.expressConfig(app, config.cfg.environment);
+
     // load external modules
     const express = require("express");
 
 
     // init express app
     const app = express();
-    var server = require('http').Server(app);
+app.use(function(req, res, next) {
+console.log("allow ori............gin");  
+res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, browser_id");
+  next();
+});
+server = require('http').Server(app);
     var io = require('socket.io')(server);
     const dashboardServices = require("./lib/socket/dashboard");
 
     io.sockets.on('connection', function(socket){
+app.use(function(req, res, next) {
+console.log("allow origin.........");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, browser_id");
+  next();
+});
         console.log("1 socket")
         socket.on('updateData', function(){
         io.sockets.emit('orderTrade');
@@ -37,7 +57,7 @@ config.dbConfig(config.cfg, (err) => {
     app.locals.rootDir = __dirname;
 
     // config express
-    config.expressConfig(app, config.cfg.environment);
+ config.expressConfig(app, config.cfg.environment);
 
     // attach the routes to the app
     require("./lib/routes")(app);
