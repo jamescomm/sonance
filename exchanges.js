@@ -29,8 +29,7 @@ config.dbConfig(config.cfg, (err) => {
 
     // init express app
     const app = express();
-app.use(function(req, res, next) {
-console.log("allow ori............gin");  
+app.use(function(req, res, next) { 
 res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, browser_id");
@@ -42,13 +41,11 @@ server = require('http').Server(app);
 
     io.sockets.on('connection', function(socket){
 app.use(function(req, res, next) {
-console.log("allow origin.........");
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, browser_id");
   next();
 });
-        console.log("1 socket")
         socket.on('updateData', function(){
         io.sockets.emit('orderTrade');
         });
