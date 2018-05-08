@@ -39,22 +39,22 @@ res.header("Access-Control-Allow-Origin", "*");
 
 
 //--------------------------------------------------------------------------------------
-// var fs = require('fs')
-// var cert = fs.readFileSync('/etc/ssl/cryptokenxchange_com.crt');
-// var key = fs.readFileSync('/etc/ssl/cryptokenxchange.com.key');
-// var ca = fs.readFileSync('/etc/ssl/cryptokenxchange_com.ca-bundle');
+var fs = require('fs')
+var cert = fs.readFileSync('/etc/ssl/cryptokenxchange_com.crt');
+var key = fs.readFileSync('/etc/ssl/cryptokenxchange.com.key');
+var ca = fs.readFileSync('/etc/ssl/cryptokenxchange_com.ca-bundle');
 
-// var options = {
-//   key: key,
-//   cert: cert
-//    ,
-//    ca: ca
-// };
-// var server = https.createServer(options, app);
+var options = {
+  key: key,
+  cert: cert
+   ,
+   ca: ca
+};
+var server = https.createServer(options, app);
 //-------------------------------------------------------------------------------------------
 
 
-server = require('http').Server(app);
+// server = require('http').Server(app);
 
 
 //------------------------------------------------------------------------------------------
